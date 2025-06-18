@@ -4,5 +4,10 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+chrono = "0.4.41"
 clap = { version = "4.5.40", features = [ "derive" ] }
+nix = { version = "0.30.1", features = ["user"] }
 owo-colors = "4.2.1"
+strum = { version = "0.27", features = [ "derive" ] }
+strum_macros = "0.27"
+tabled = { version = "0.20.0", features = ["ansi"] }
