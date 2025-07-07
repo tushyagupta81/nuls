@@ -130,6 +130,10 @@ fn parse_file_name(entry: fs::DirEntry) -> String {
 fn parse_file_size(size: u64) -> String {
     if size < 1024 {
         size.to_string().green().to_string()
+    } else if size > 1024 * 1024 {
+        format!("{}m", (size as f64 / (1024.0 * 1024.0)).round())
+            .bright_yellow()
+            .to_string()
     } else {
         format!("{}k", (size as f64 / 1024.0).round())
             .bright_yellow()
